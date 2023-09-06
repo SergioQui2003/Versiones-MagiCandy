@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+/* RESET LO QUE QUIERE DECIR ES QUE TODA LA PAG YO LE PONGO LAS MEDIDAS QUE SE QUIERAN*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header{
+    height: 100px;
+    width: 100;
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:0 10px;
+    display: inline-block;
+}
+
+.mostrar-menu, 
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+    color: black;
+    transition: 0,04s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu,
+.esconder-menu{
+    color: black;
+}
+
+#check{
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:760px){
+    /* HEADER */
+    .esconder-menu,
+    .mostrar-menu{
+        display:block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        right: 100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0,08s;
+        text-decoration: none;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+body{
+    background-image: url(IMG/fondo\ body\ 2.jpg);
+}
+.nosotros{
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+}
+
+.primer-parrafo {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5%;
+    text-align: justify;
+}
+
+.nosotros-texto {
+    flex: 1; 
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+}
+
+.nosotros-img {
+    float: right;
+    max-width: 100%;
+    margin: 4%;
+    margin-top: 8%;
+    margin-left: 8%;
+    border-radius: 10% 25%;
+}
+
+.mision {
+    font-family: "Montserrat", sans-serif;
+    font-size:x-large;
+    margin-top: 10%;
+    margin-left: 6%;
+    justify-content: left;
+}
+
+#mision-p {
+    font-family: "Montserrat", sans-serif;
+    margin: 5%;
+    text-align: justify;
+}
+
+.color-mision{
+    
+    background-size: cover;
+    width: 50%;
+}
+
+.vision {
+    font-family: "Montserrat", sans-serif;
+    font-size: x-large;
+    text-align: center;
+    margin-right: 6%;
+    margin-left: -60%;
+}
+#vision-p{
+    font-family: "Montserrat", sans-serif;
+    margin: 5%;
+    text-align: justify;
+}
+
+.color-vision{
+    
+    background-size: cover;
+    margin-left: 50%;
+}
+
+footer{
+    background-color: black;
+    height: 28px;
+}

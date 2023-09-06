@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Inventario.css".css">
+    <link rel="icon" href="IMG/inventario.ico">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div class="text writing">
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="nombre">Nombre Del Producto</label>
+            <span></span>
+        </div>
+
+        <div class="password writing">
+            <input type="text" id="contrasena" name="contrasena">
+            <label for="contrasena">Código Del Producto</label>
+            <span></span>
+        </div>
+
+        <div class="textarea writing">
+            <textarea id="comentarios" name="comentarios"></textarea>
+            <label for="comentarios">Comentarios</label>
+            <span></span>
+        </div>
+
+        <div class="number">
+            <label class="titulo">Unidades</label>
+            <div class="numero">
+                <label for="numero" class="decrement" onclick="decrementValue(this)"><svg viewBox="0 0 448 512" fill="white"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></label>
+                <input type="number" id="numero" name="numero" min="0" max="9999999">
+                <label for="numero" class="increment" onclick="incrementValue(this)"><svg viewBox="0 0 448 512" fill="white"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></label>
+            </div>
+        </div>
+
+        <div class="date">
+            <label class="titulo">Fecha de entrada</label>
+            <div class="fecha">
+                <input type="date" id="fecha" name="fecha">
+                <span></span>
+            </div>
+        </div>
+
+        <div class="date">
+            <label class="titulo">Fecha de Salida</label>
+            <div class="fecha">
+                <input type="date" id="fecha" name="fecha">
+                <span></span>
+            </div>
+        </div>
+
+        <div class="switch">
+            <input type="checkbox" id="check-menu"/>
+            <label for="check-menu" class="view"><span><span></span></span></label>
+            <label for="check-menu">Activar</label>
+        </div>
+
+        <div class="checkbox">
+        <label>
+            <input type="checkbox" name="Entregar a domicilio" value="opcion1">
+            <div class="view"><span><svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span></div> Vencimiento
+        </label>
+        <label>
+            <input type="checkbox" name="Recogen fisico" value="opcion2">
+            <div class="view"><span><svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span></div> Daño
+        </label>
+        </div>
+
+        <div class="file">
+            <input type="file" id="archivo" name="archivo" onchange="mostrarNombreArchivo(this)">
+        <div class="view" onclick="seleccionarArchivo()">
+            <span class="ico">
+                <svg viewBox="6 6 12 12"><path d="M6,14.25 L7.5,14.25 L7.5,16.5 L16.5,16.5 L16.5,14.25 L18,14.25 L18,16.5 C18,17.325 17.325,18 16.5,18 L7.5,18 C6.675,18 6,17.325 6,16.5 L6,14.25 Z M9.3075,10.8075 L11.25,8.8725 L11.25,15 L12.75,15 L12.75,8.8725 L14.6925,10.815 L15.75,9.75 L12,6 L8.25,9.75 L9.3075,10.8075 Z"></path></svg>
+                <svg viewBox="0 0 384 512"><path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z"/></svg>
+            </span>
+            <span class="text">Añadir archivo</span>
+        </div>
+        </div>
+
+        <div class="guardar">
+            <input type="submit" value="GUARDAR">
+        </div>
+    </form>
+</body>
+</html>
