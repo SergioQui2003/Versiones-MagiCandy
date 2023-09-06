@@ -1,0 +1,20 @@
+body {
+	background-color: black;
+	color: white;
+	margin: 20% 20%;
+	font-size: x-large;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+@keyframes color-animation {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: purple; }
+}
+
+.textoo {
+    animation: color-animation 5s infinite;
+}
