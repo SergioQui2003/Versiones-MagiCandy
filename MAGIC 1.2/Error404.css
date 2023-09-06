@@ -1,0 +1,32 @@
+/* RESET LO QUE QUIERE DECIR ES QUE TODA LA PAG YO LE PONGO LAS MEDIDAS QUE SE QUIERAN*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1 {
+    font-size: 80px;
+}
+p {
+    font-size: 40px;
+}
+.button {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+}
