@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Productos.css">
+    <link rel="icon" href="IMG/Icono.ico">
+    <title>Productos</title>
+</head>
+<body>
+    <!-- ESTE ES EL MENU BLANCO CON CADA UNA DE LAS PAGINAS -->
+    <header>
+        <a href="../INICIOPAGS/Inicio.html"><img class="logo" src="../IMG/MGCwhite.jpg" alt="Logo" height="70px" width="200px"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="show-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="../INICIOPAGS/Cuenta.html">Cuenta</a>
+            <a href="../INICIOPAGS/Inicio.html">Inicio</a>
+            <a href="../INICIOPAGS/Productos.html">Productos</a>
+            <a href="../INICIOPAGS/Nosotros.html">Nosotros</a>
+            <a href="../INICIOPAGS/Contacto.html" >Contacto</a>
+            <label for="check" class="hide-menu">
+            &#215
+            </label>
+        </nav>
+    </header>
+    <section class="content">
+        <div class="counter" id="counter">
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Anisadas.jpg" alt="Anisadas">
+                    </div>
+                    <p class="descripcion">Anisadas</p>
+                    <span class="precio">$ 5.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Candy Ranch.jpg" alt="Candy Ranch">
+                    </div>
+                    <p class="descripcion" id>Candy Ranch </p>
+                    <span class="precio">$ 6.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Fruticas.jpg" alt="Fruticas">
+                    </div>
+                    <p class="descripcion">Fruticas
+                    </p>
+                    <span class="precio">$ 4.600</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Max.jpg" alt="Max Combie">
+                    </div>
+                    <p class="descripcion">Max</p>
+                    <span class="precio">$ 4.300</span>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Bianchi.jpg" alt="Bianchi">
+                    </div>
+                    <p class="descripcion">Bianchi</p>
+                    <span class="precio">$ 6.450</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Deditos.jpg" alt="Deditos Chocolate">
+                    </div>
+                    <p class="descripcion">Deditos</p>
+                    <span class="precio">$ 8.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Grissly.jpg" alt="Goma Grissly">
+                    </div>
+                    <p class="descripcion">Grissly</p>
+                    <span class="precio">$ 6.500</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Candy mix.jpg" alt="Candy mix">
+                    </div>
+                    <p class="descripcion">Candy mix</p>
+                    <span class="precio">$ 10.100</span>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Bianchi.jpg" alt="Bianchi">
+                    </div>
+                    <p class="descripcion">Bianchi</p>
+                    <span class="precio">$ 6.450</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Deditos.jpg" alt="Deditos Chocolate">
+                    </div>
+                    <p class="descripcion">Deditos</p>
+                    <span class="precio">$ 8.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Grissly.jpg" alt="Goma Grissly">
+                    </div>
+                    <p class="descripcion">Grissly</p>
+                    <span class="precio">$ 6.500</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Candy mix.jpg" alt="Candy mix">
+                    </div>
+                    <p class="descripcion">Candy mix</p>
+                    <span class="precio">$ 10.100</span>
+                </div>
+            </div> 
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Bianchi.jpg" alt="Bianchi">
+                    </div>
+                    <p class="descripcion">Bianchi</p>
+                    <span class="precio">$ 6.450</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Deditos.jpg" alt="Deditos Chocolate">
+                    </div>
+                    <p class="descripcion">Deditos</p>
+                    <span class="precio">$ 8.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Grissly.jpg" alt="Goma Grissly">
+                    </div>
+                    <p class="descripcion">Grissly</p>
+                    <span class="precio">$ 6.500</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="../IMG/Candy mix.jpg" alt="Candy mix">
+                    </div>
+                    <p class="descripcion">Candy mix</p>
+                    <span class="precio">$ 10.100</span>
+                </div>
+            </div> 
+        </div>
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+                <!-- Anisadas -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="../IMG/Anisadas.jpg" alt="" id="Anisadas">
+                <h2 id="modelo">Anisadas</h2>
+                <p id="descripcion">Dulce relleno por 100 Unidades</p>
+
+                <span class="precio" id="precio">$ 5.000</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="">Cantidades</label>
+                        <select name="" id="">
+                            <option value="">6</option>
+                            <option value="">12</option>
+                            <option value="">24</option>
+                            <option value="">48</option>
+                        </select>
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+                <!-- Candy Ranch -->
+                <div class="seleccion" id="seleccion">
+                    <div class="cerrar" onclick="cerrar()">
+                        &#x2715
+                    </div>
+                    <div class="info">
+                        <img src="../IMG/Candy Ranch.jpg" alt="" id="Candy Ranch ">
+                        <h2 id="modelo">Candy Ranch</h2>
+                        <p id="descripcion">Dulce duro por 30 Unidades</p>
+        
+                        <span class="precio" id="precio">$ 6.800</span>
+        
+                        <div class="fila">
+                            <div class="size">
+                                <label for="">Cantidades</label>
+                                <select name="" id="">
+                                    <option value="">6</option>
+                                    <option value="">12</option>
+                                    <option value="">24</option>
+                                    <option value="">48</option>
+                                </select>
+                            </div>
+                            <button>AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <footer> </footer>
+    <script src="Productos.js"></script>
+</body>
+</html>

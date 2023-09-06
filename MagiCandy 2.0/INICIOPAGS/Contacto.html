@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Contacto.css">
+    <link rel="icon" href="../IMG/Icono.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/44485b0623.js" crossorigin="anonymous"></script>  <!--librería para que el icono de whatsapp funcione correctamente-->
+    <title>Contacto</title>
+</head>
+<body>
+    <!-- ESTE ES EL MENU BLANCO CON CADA UNA DE LAS PAGINAS -->
+    <header>
+        <a href="../INICIOPAGS/Inicio.html"><img class="logo" src="../IMG/MGCwhite.jpg" alt="Logo" height="70px" width="200px"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="show-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="../INICIOPAGS/Cuenta.html">Cuenta</a>
+            <a href="../INICIOPAGS/Inicio.html">Inicio</a>
+            <a href="../INICIOPAGS/Productos.html">Productos</a>
+            <a href="../INICIOPAGS/Nosotros.html">Nosotros</a>
+            <a href="../INICIOPAGS/Contacto.html" >Contacto</a>
+            <label for="check" class="hide-menu">
+            &#215
+            </label>
+        </nav>
+    </header><br>
+    
+        <div class="map-content">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d496.3807281861719!2d-73.34041748066431!3d5.560226681793523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7c0cbaf99a11%3A0x99740e91a3e931d1!2zQ2wgNTksIFR1bmphLCBCb3lhY8Oh!5e0!3m2!1ses-419!2sco!4v1683502081508!5m2!1ses-419!2sco" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><br>
+    
+<!-- ==================================FORMULARIO DE CONTACTO=========================================== -->
+
+    <section class="form_wrap" style="max-width: 100%;">
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>INFORMACIÓN<br>DE CONTACTO</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope" style="font-size: 18px;"></span> magicandy@gmail.com</p>
+                <p><span class="fa fa-mobile" style="font-size: 18px;"></span> (+57) 313 3813154</p>
+                <p><span class="fa fa-map-marker" style="font-size: 18px;"></span>&nbsp Calle 59 Tunja, Boyacá</p>
+            </section>
+        </section>
+
+        <form action="https://formsubmit.co/magicandy2023@gmail.com" method="post" class="form_contact" onsubmit="return validarFormulario()">
+            <h2>Envía tu mensaje</h2>
+            <div class="user_info">
+                <!-- Campo de nombre -->
+                <label for="names">Nombre:</label>
+                <input type="text" name="Nombre" id="names" required pattern="[A-Za-z\s]+" title="Ingresa solo letras y espacios" style="font-family: sans-serif;">
+                <span id="namesError" class="error-message"></span>
+        
+                <!-- Campo de teléfono/celular -->
+                <label for="phone">Teléfono / Celular:</label>
+                <input type="text" name="Teléfono" id="phone" pattern="[0-9]+" title="Ingresa solo números" style="font-family: sans-serif;">
+                <span id="phoneError" class="error-message"></span>
+        
+                <!-- Campo de correo electrónico -->
+                <label for="email">Correo electrónico:</label>
+                <input type="email" name="Correo" id="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|co)" title="Ingresa un correo válido (.com o .co)" style="font-family: sans-serif;">
+                <span id="emailError" class="error-message"></span>
+        
+                <!-- Campo de mensaje -->
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required style="font-family: sans-serif;"></textarea>
+                <span id="mensajeError" class="error-message"></span>
+        
+                <!-- Botón de enviar mensaje -->
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+        
+                <!-- Vuelve a redirigir a la página que se le ponga después de completar formulario -->
+                <input type="hidden" name="_next" value="Contacto.html">
+                <!-- Para evitar bots en el formulario -->
+                <input type="hidden" name="_captcha" value="false">
+            </div>
+        </form>
+        
+        
+    </section>
+
+<!-- ============================ICONO DE whatsapp PARA COMUNICACION=========================================== -->
+
+<a href="https://wa.me/+3133813154" class="botonW"
+title="Envíanos un mensaje" target="_blank">
+    <i class="fa fa-whatsapp"></i>
+    <!-- para que el ícono funcione, debemos incluir la librería de íconos fontawesome-->
+
+</a>
+
+<!-- ===========================0000000EL PIE DE PAGINA INFORMACIÓN MAS DE NOSOTROS==================================== -->
+
+    <footer class="bg-light text-dark pt-5 pb-4" style="height: 1%;">
+        <div class="container text-center text-md-start" style="margin-top: -20px;" 2px;>
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3"> 
+                    <h5 class="text-uppercase mb-4" style="color: #009fe3; font-size: 14px; font-weight: bold;">Horarios</h5>
+                    <hr class="mb-4">
+                    <p style="font-size: 12px;">
+                        Lunes a Viernes <br>
+                        8am - 7pm <br><br>
+                        Sábados <br>
+                        9am - 5pm
+                    </p>
+                </div>
+    
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
+                    <h5 class="text-uppercase mb-4" style="color: #009fe3; font-size: 14px; font-weight: bold;">Contáctanos</h5>
+                    <hr class="mb-4">
+                    <p style="font-size: 12px;"><a href="../INICIOPAGS/Contacto.html" class="text-dark">Formulario para contactarnos</a></p>
+                    <p style="font-size: 12px;"><a href="../ERROR/error404.html" class="text-dark">Política de privacidad</a></p>
+                    <p style="font-size: 12px;"><a href="../ERROR/error500.html" class="text-dark">Conoce más...</a></p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4" style="color: #009fe3; font-size: 14px; font-weight: bold;">Nuestros datos</h5>
+                    <hr class="mb-4">
+                    <p style="font-size: 12px;"><i class="bi bi-house-fill"> <a href="https://goo.gl/maps/WFHVm9cFa2Y7uk5u7" style="text-decoration: none; color: black; font-family: sans-serif; font-size: 12px;">Calle 59 Barrio Santa Rita - Tunja Boyacá</a></i></p>
+                    <p style="font-size: 12px;"><i class="bi bi-phone-fill"> <a href="#" style="color: black; text-decoration: none; font-size: 12px;"> 568 547 2658</a></i></p>
+                    <p style="font-size: 12px;"><i class="bi bi-envelope-at-fill"> <a href="#" style="color: black; text-decoration: none; font-size: 12px;">magicandy2023@gmail.com</a></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+        
+        <script>
+            function validarFormulario() {
+                // Validar el campo de nombre
+                var namesInput = document.getElementById("names");
+                var namesError = document.getElementById("namesError");
+                if (!namesInput.checkValidity()) {
+                    namesError.textContent = "Por favor, ingresa solo letras y espacios.";
+                    return false;
+                }
+                namesError.textContent = "";
+        
+                // Validar el campo de teléfono/celular (opcional)
+                var phoneInput = document.getElementById("phone");
+                var phoneError = document.getElementById("phoneError");
+                if (phoneInput.value !== "" && !phoneInput.checkValidity()) {
+                    phoneError.textContent = "Por favor, ingresa solo números en el campo de teléfono/celular.";
+                    return false;
+                }
+                phoneError.textContent = "";
+        
+                // Validar el campo de correo electrónico
+                var emailInput = document.getElementById("email");
+                var emailError = document.getElementById("emailError");
+                if (!emailInput.checkValidity()) {
+                    emailError.textContent = "Por favor, ingresa un correo electrónico válido (.com o .co).";
+                    return false;
+                }
+                emailError.textContent = "";
+        
+                // Validar el campo de mensaje
+                var mensajeInput = document.getElementById("mensaje");
+                var mensajeError = document.getElementById("mensajeError");
+                if (!mensajeInput.checkValidity()) {
+                    mensajeError.textContent = "Por favor, ingresa un mensaje.";
+                    return false;
+                }
+                mensajeError.textContent = "";
+        
+                // Si todos los campos son válidos, el formulario se envía
+                return true;
+            }
+        </script>
+
+
+</body>
+</html>
