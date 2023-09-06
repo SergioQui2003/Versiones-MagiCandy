@@ -1,0 +1,52 @@
+body {
+    background: #9ddef7;
+}
+
+.form {
+    width: 500px;
+    padding:20px 35px;
+    background:#fff;
+    margin:100px auto;
+    border-radius:4px;
+    border-bottom: 12px solid #e7e8e8;
+
+}.form > input,
+.form > textarea {
+    display:block;
+    margin-bottom:10px;
+    width:100%;
+    background: #ebf1f1;
+    border:none;
+    border-left:8px solid #bac3ca;
+    padding:12px 17px;
+    box-sizing:border-box;
+}
+.form > textarea {
+    resize:none;
+    height:100px;
+}
+.form > input:focus,
+.form > textarea :focus {
+  outline:none;
+}
+.form .enviar {
+  text-align: right;
+  margin-top: 30px;
+}
+.form .enviar > input {
+    background:#000dff;
+    color:#fff;
+    border:none;
+    padding: 7px 40px;
+    font-weight:bold;
+    border-bottom: 6px solid #11a8ff;
+}
+.form .enviar > input :focus,
+.form .enviar > input:active {
+    cursor:pointer;
+    border-bottom-width:2px;
+    position:relative;
+    top:4px;
+    margin-bottom: 4px;
+    outline: none;
+}

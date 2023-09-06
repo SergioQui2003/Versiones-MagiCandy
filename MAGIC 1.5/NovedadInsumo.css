@@ -1,0 +1,398 @@
+/* Estilos pagina */
+* {margin: 0; box-sizing: border-box;}
+body {
+  min-height: 100vh;
+  background-color: #65bcd4;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  color: rgb(0, 0, 0);
+  font-size: min(25px, max(3.4vw, 17px));
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+/* Estilos personalizados */
+form {
+  width: 100%;
+  max-width: 800px;
+}
+form > div {
+  margin: .7em 0;
+  text-align: left;
+}
+input, textarea {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+
+/* text, password, textarea y number */
+.writing {
+  display: flex;
+  flex-direction: column;
+  position: relative
+}
+.writing :is(input , textarea) {
+  padding: 10px 0;
+  margin-top: 1.2em;
+}
+.writing :is(input , textarea) ~ label {
+  position: absolute;
+  top: calc(10px + 0.8em);
+  left: 0px;
+  pointer-events: none;
+  transition: all .2s ease;
+  color: #000000;
+}
+.writing :is(input , textarea):focus ~ label,
+.writing :is(input , textarea).has-text ~ label{
+  top: 0px;
+  font-size: .9em;
+}
+.writing :is(input , textarea) ~ span {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: #000dff;
+  display: flex;
+  justify-content: center;
+}
+.writing :is(input , textarea):invalid ~ span {
+  background: #000dff;
+}
+.writing :is(input , textarea) ~ span:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #ffa600;
+  transition: width .5s ease;
+}
+.writing :is(input , textarea):focus ~ span:before {width: 100%;}
+/* text y password */
+.writing:is(.text , .password) :is(input , input ~ span) {width: 400px;}
+/* textarea */
+.textarea textarea {
+  overflow: auto;
+  min-height: calc(1em + 20px);
+  height: 1.2em;
+  overflow: hidden;
+  resize: none;
+}
+
+
+/* PONER LAS UNIDADES */
+.number {margin-top: 1em;}
+.number .titulo {font-size: .9em; color: #000000;}
+.number .numero {
+  margin-top: .5em;
+  user-select: none;
+  display: flex;
+}
+.number .numero > * {padding: 10px;}
+.number .numero input {
+  text-align: center;
+  background: #e2e4d9;
+  min-width: 150px;
+}
+.number .numero input::-webkit-inner-spin-button {appearance: none;}
+.number .numero label {
+  cursor: pointer;
+  width: calc(1em + 20px);
+  text-align: center;
+  background: #000dff;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.number .numero label:hover {background: #03A9F4;}
+.number .numero label:active {background: #225588;}
+.number .numero label svg {width: 75%;}
+.number .numero .decrement {border-radius: 10px 0 0 10px;}
+.number .numero .increment {border-radius: 0 10px 10px 0;}
+
+
+/* FECHA */
+.date, .time {
+  display: flex;
+  flex-direction: column;
+  position: relative;  
+  margin-top: 1em;
+}
+.date .titulo {font-size: .9em; color: #000000;}
+.date .fecha, .time .tiempo {width: min-content;}
+:is(.date , .time) input {
+  padding: 10px 0;
+  margin-top: 1em;
+}
+:is(.date , .time) input::-webkit-calendar-picker-indicator {filter: invert(1);}
+.date label, .time .titulo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: .7em;
+  pointer-events: none;
+  transition: all .2s ease;
+  color: #000dff;
+}
+:is(.date , .time) input ~ span {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: #000dff;
+  display: flex;
+  justify-content: center;
+}
+:is(.date , .time) input:invalid ~ span {
+  background: #000dff;
+}
+:is(.date , .time) input ~ span:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #03A9F4;
+  transition: width .5s ease;
+}
+:is(.date , .time) input:focus ~ span:before {width: 100%;}
+
+
+/* BARRA DE ACTIVAR */
+.switch {display: flex; align-items: center;}
+.switch input {display: none;}
+.switch .view {
+  position: relative;
+  display: block;
+  margin: 25px;
+  margin-left: 10px;
+  max-width: 50px;
+  width: 50vw;
+  min-width: 30px;
+  aspect-ratio: 35/15;
+  background-color: #e2e4d9;
+  border-radius: 100vw;
+  cursor: pointer;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.switch #check-menu:checked ~ .view {
+  background-color: #225588;
+}
+
+/* DESLIZABLE DE LA BARRA */
+.switch .view > span {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(5px, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.switch #check-menu:checked ~ .view > span {
+  left: 100%;
+  transform: translate(-5px, -50%);
+}
+/*  BARRA PARA ACTIVAR */
+.switch .view > span > span {
+  content: "";
+  height: 135%;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #000dff;
+  border-radius: 100%;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.switch #check-menu:checked ~ .view > span > span {
+  background-color: #000dff;
+}
+/* FLOTAR */
+.switch .view:hover > span:before {
+  content: "";
+  height: 265%;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background-color: #1c55e5;
+  border-radius: 100%;
+  opacity: 0;
+}
+.switch .view:hover > span:before {opacity: 1;}
+.switch #check-menu:checked ~ .view > span:before {
+  background-color: #3399ff14;
+}
+
+/* ACTIVAR OPCION */
+.switch .view > span:after {
+  content: "";
+  height: 0px;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background-color: #1c55e5;
+  border-radius: 100%;
+  opacity: 0;
+  transition: height 0s ease .5s, opacity .5s ease 0s;
+}
+.switch .view:hover:active > span:after {
+  height: 265%;
+  opacity: 1;
+  transition: height .5s ease, opacity 0s ease;
+}
+.switch #check-menu:checked ~ .view:hover:active > span:after {
+  background-color: #3399ff26;
+}
+
+
+/* OPCIONES DEL PRODUCTO */
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+.checkbox label {
+  display: flex; align-items: center;
+  gap: .5em;
+  width: max-content;
+  cursor: pointer;
+}
+.checkbox input {display: none;}
+.checkbox .view {
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  background: #e2e4d9;
+  border-radius: 5px;
+  position: relative;
+  padding: 0.05em;
+}
+.checkbox input:checked ~ .view {background: #3399ff;}
+.checkbox .view:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  height: 2.25em;
+  width: 2.25em;
+  border-radius: 50%;
+  background-color: #1c55e5;
+  z-index: -1;
+  transition: transform .3s ease .5s;
+}
+.checkbox label:hover:active .view:before {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform .1s ease;
+}
+.checkbox .view span {
+  height: 100%;
+  width: 0%;
+  display: block;
+  overflow: hidden;
+  transition: width .1s ease .1s;
+}
+.checkbox input:checked ~ .view span {width: 100%;}
+.checkbox .view svg {
+  fill: #000dff;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+/* ARCHIVO */
+.file input {display: none;}
+.file .view {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  background: #000dff;
+  border-radius: 5px;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+.file .view:before {
+  content: "";
+  background: #0180ff;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity .2s ease, transform 0s ease .2s, background 0s ease 1s;
+}
+.file .view:hover:before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.file .view.file-select:before{background: #f44336;}
+.file .view:active:before {
+  background: #225588;
+  transition: background 0s ease;
+}
+.file .view.file-select:active:before{
+  background: #B71C1C;
+  transition: background 0s ease;
+}
+.file .view.file-select:after {content: "X"; color: rgb(234, 11, 11);}
+.file .view.file-select:hover:after {color: white; z-index: 1}
+.file .view > * {z-index: 1}
+.file .ico {
+  height: 1em;
+  width: 1em;
+}
+.file .view .ico svg {
+  fill: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+.file .view .ico svg:nth-child(2) {display: none}
+.file .view.file-select .ico svg:nth-child(1) {display: none}
+.file .view.file-select .ico svg:nth-child(2) {display: block}
+.file .view .text {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* GUARDAR */
+.guardar input {
+  padding: .5em 1em;
+  background: #000dff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.guardar input:active {
+  background: white;
+}

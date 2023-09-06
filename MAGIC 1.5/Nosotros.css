@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+/* RESET LO QUE QUIERE DECIR ES QUE TODA LA PAG YO LE PONGO LAS MEDIDAS QUE SE QUIERAN*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    
+}
+
+/* HEADER */
+
+header{
+    height: 100px;
+    width: 100;
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:0 10px;
+    display: inline-block;
+}
+
+.show-menu, 
+.hide-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+    color: black;
+    transition: 0,04s;
+}
+
+.show-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.show-menu,
+.hide-menu{
+    color: black;
+}
+
+#check{
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:760px){
+    /* HEADER */
+    .hide-menu,
+    .show-menu{
+        display:block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        right: 100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0,08s;
+        text-decoration: none;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    .hide-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+body{
+    background-image: url(IMG/fondo\ body\ 2.jpg);
+}
+.us-title{
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+}
+
+.first-paragraph {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5%;
+    text-align: justify;
+}
+
+.us-paragraph {
+    flex: 1; 
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 5%;
+    font-size: x-large;
+}
+
+.us-img {
+    float: right;
+    max-width: 100%;
+    margin: 4%;
+    margin-top: 8%;
+    margin-left: 8%;
+    border-radius: 10% 25%;
+}
+
+.mission {
+    font-family: "Montserrat", sans-serif;
+    font-size:x-large;
+    margin-top: 5%;
+    margin-left: 6%;
+    justify-content: left;
+}
+
+#mission-paragraph {
+    font-family: "Montserrat", sans-serif;
+    margin: 5%;
+    text-align: justify;
+}
+
+
+
+.vision {
+    font-family: "Montserrat", sans-serif;
+    font-size: x-large;
+    text-align: center;
+    margin-right: 6%;
+    margin-left: -60%;
+    margin-top: 5%;
+}
+#vision-paragraph {
+    font-family: "Montserrat", sans-serif;
+    margin: 5%;
+    text-align: justify;
+}
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px; /* Puedes ajustar el valor según necesites */
+    margin: 5%;
+    font-size: x-large;
+}
+
+@media (max-width: 600px) {
+    .parent {
+    grid-template-columns: 1fr; /* Cambiamos a una única columna en pantallas pequeñas */
+    }
+    
+    .div2 {
+    grid-area: auto; /* Dejamos que el flujo normal de la cuadrícula determine la posición */
+    }
+}
+
+footer{
+    background-color: black;
+    height: 28px;
+}
