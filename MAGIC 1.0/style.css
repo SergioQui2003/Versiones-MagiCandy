@@ -1,0 +1,425 @@
+/* RESET LO QUE QUIERE DECIR ES QUE TODA LA PAG YO LE PONGO LAS MEDIDAS QUE SE QUIERAN*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* HEADER */
+
+header{
+    height: 100px;
+    background-color: white;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+menu a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:0 10px ;
+    display: inline-block;
+}
+
+*{
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.mostrar-menu, 
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+    color: black;
+    transition: 0,04s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu,
+.esconder-menu{
+    color: black;
+}
+
+#check{
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:760px){
+    /* HEADER */
+    .esconder-menu,
+    .mostrar-menu{
+        display:block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        right: 100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0,08s;
+        text-decoration: none;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+/* BANNER DE LA PAGINA*/
+
+.banner {
+    max-width: 100%;
+}
+.banner img {
+    width: 100%;
+    height: 50%;
+}
+
+/* FONDO DE LA PAGINA WEB */
+
+body {
+    background-image: url('IMG/Fondo\ Body.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/*TEXTO PERSUASVO Y LOS 3 PRODUCTOS */
+
+.contenedor {
+    max-width: 100%;
+}
+.texto-persuasivo {
+    font-size: 1em;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* LOS 3 PRIMEROS PRODUCTOS DE LA PAG INDEX */
+
+.contenedor-productos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contenedor-productos img {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/*BONTON PARA VER MAS PRODUCTOS---REDICIONA A LA PAG PRODUCTOS*/
+
+.boton-vermas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+    margin: auto;
+    width: 180px;
+    font-size: 1rem;
+    padding: 0.8em 2em;
+    background-color: #ffffff;
+    border: 3px solid rgb(159, 227, 104);
+    border-radius: 1em;
+    color: #fff;
+    font-weight: bolder;
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+    box-shadow: -5px 5px 0px 0px rgb(159, 227, 104);
+}
+
+button:hover {
+    transform: translate(5px, -5px);
+}
+
+/*REDES SOCIALES DE LA PAGINA PRINCIPAL*/
+.contenedor-redes {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5%;
+}
+
+.contenedor-redes li {
+    display: inline-block;  /*APARECER DE FORMA ORIZOLTAL SIN VIÑETAS*/
+}
+
+.contenedor a {
+    padding: 5px;  /*ESTE ES PARA QUE CADA IMAGEN UN ESPACIO ENTRE CADA UNA DE ELLAS */
+}
+
+/* AQUI SE DARA EL ESTILO DEL FOOTER */
+
+footer {
+    height: 25px;
+    background-color: #1C1C1C;
+}
+
+.copyright{
+    color: white;
+    font-size: 15px;
+    margin-bottom: 3%;
+    margin-top: 20px;
+}
+
+/* EMPEZAMOS CON LAS PAGINAS DE IZQUIERDA A DERECHA */
+/* ESTILOS PARA LA PAGINA DE CUENTA */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.card {
+    margin-top: 1%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    width: 350px;
+    height: 515px;
+    flex-direction: column;
+    gap: 35px;
+    box-shadow: 16px 16px 32px #c8c8c8,-16px -16px 32px #fefefe;
+    border-radius: 8px;
+}
+
+.inputBox {
+position: relative;
+width: 250px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+}
+
+.inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+.enter {
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 3em;
+}
+
+.enter:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+/* VAMOS A EMPEZAR CON LOS ESTILOS DE LA PAG. NOSOTROS  */
+
+h1, h2, p {
+    color: #333;
+}
+
+.img-nosotros {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+    padding: 10px;
+    }
+}
+
+/* VAMOS A EMPEZAR CON LOS ESTILOS DE LA PAG. PRODUCTOS  */
+/* PONER ACA ESTILO DE LOS PRODUCTOS*/
+
+/* VAMOS A EMPEZAR CON LOS ESTILOS DE LA PAG. CONTACTO*/
+
+/* ESTE ES EL ESTILO DE MAPA DE UBICACION */
+.mapa-contenedor {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporción de aspecto 16:9 para videos responsivos */
+    overflow: hidden;
+}
+
+.mapa-contenido {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa-contenido iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ESTE ES EL ESTILO DE FORMULARIO DE CONTACTO*/
+
+
+form {
+    width: 100%;
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h2 {
+    color: #0c0202;
+    font-size: 35px;
+}
+
+label {
+    color: #0c0202;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 17px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #edeeff;
+    border: 2px solid #f0f0fa;
+    color: #080808;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #777474de;
+}
+
+.botton {
+    font-size: 16px;
+    color: #ffffff;
+    border: 0;
+    border-radius: 25px;
+    background-color: #ff77a0;
+    cursor: pointer;
+}
+
+.botton:hover {
+    background-color: #cbc5d6;
+}
+
+@media only screen and (max-width: 768px) {
+    .mapa-contenido {
+    margin-top: 5%;
+}
+
+    form {
+    max-width: 60%;
+}
+}
+
+@media only screen and (max-width: 480px) {
+    form {
+    max-width: 80%;
+}
+}
