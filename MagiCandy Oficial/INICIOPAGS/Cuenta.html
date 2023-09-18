@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../INICIOPAGS/Cuenta.css">
+    <link rel="icon" href="../IMG/Icono.ico">
+    <title>Cuenta</title>
+</head>
+<body>
+    <!-- ESTE ES EL MENU BLANCO CON CADA UNA DE LAS PAGINAS -->
+    <header>
+        <a href="../INICIOPAGS/Inicio.html"><img class="logo" src="../IMG/MGCwhite.jpg" alt="Logo" height="70px" width="200px"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="show-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="../INICIOPAGS/Cuenta.html">Cuenta</a>
+            <a href="../INICIOPAGS/Inicio.html">Inicio</a>
+            <a href="../INICIOPAGS/Productos.html">Productos</a>
+            <a href="../INICIOPAGS/Nosotros.html">Nosotros</a>
+            <a href="../INICIOPAGS/Contacto.html" >Contacto</a>
+            <label for="check" class="hide-menu">
+            &#215
+            </label>
+        </nav>
+    </header>
+    
+    <div id="login">
+    <div class="container" id="container">
+
+        <!-- REGISTRO -->
+
+        <div class="form-container sign-up-container">
+            <form id="registrationForm" onsubmit="return validarFormulario()">
+                <h1>Crear Cuenta</h1><br>
+                <input type="text" placeholder="Nombre" id="nameInput" required>
+                <input type="text" placeholder="Teléfono" id="phoneInput" required>
+                <input type="email" placeholder="Email" id="emailInput" required>
+                <input type="text" placeholder="N° de identificación" id="Cedula" required>
+                <input type="password" placeholder="Contraseña" id="passwordInput" required><br>
+                <div id="error-container" style="color: red;"></div> <!-- Cambio de id -->
+                <button type="submit">Regístrate</button>
+            </form>
+        </div>
+
+        <!-- FORMULARIO LOGIN -->
+
+        <div class="form-container sign-in-container">
+            <form id="login-form" onsubmit="return iniciarSesion()" action="../DAHSPAGS/Ingreso.html">
+                <h1>Iniciar Sesión</h1><br>
+                <input type="text" placeholder="Número de identificación" id="lsap" required/>
+                <input type="password" placeholder="Contraseña" id="lpass" required/>
+                <div id="error-message" style="color: red;"></div>
+                <a href="../INICIOPAGS/RecuperacionCuenta.html"><u>Olvidaste tu contraseña</u></a>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bienvenido de <br> nuevo!</h1>
+                    <p>Inicia sesión con tus datos personales para continuar con nosotros</p>
+                    <button class="ghost" id="signIn">Iniciar Sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hola usuario!</h1>
+                    <p>¡Regístrate y se parte de nosotros!</p>
+                    <button class="ghost" id="signUp">Registrate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-nets">
+    <ul>
+        <li><a href="https://www.instagram.com/magiccandys/" target="_blank"><img src="../IMG/instagram.svg" width="30" height="30"></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100091925247816" target="_blank"><img src="../IMG/facebook.svg" width="30" height="30"></a></li>
+        <li><a href="https://web.whatsapp.com" target="_blank"><img src="../IMG/whatsapp.svg" width="30" height="30"></a></li>
+    </ul>
+</div>
+
+
+<script src="Cuenta.js"></script>
+
+<!-- SCRIPT PARA EL REGISTRATE -->
+
+<script>
+
+function validarFormulario() {
+            var nameInput = document.getElementById('nameInput');
+            var phoneInput = document.getElementById('phoneInput');
+            var emailInput = document.getElementById('emailInput');
+            var cedulaInput = document.getElementById('Cedula');
+            var passwordInput = document.getElementById('passwordInput');
+            var errorContainer = document.getElementById('error-container'); // Cambio de id
+
+            var namePattern = /^[A-Za-z\s]+$/; // Letras y espacios
+            var phonePattern = /^\d{10}$/; // 10 dígitos exactamente
+            var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(co|com|hotmail)$/; // Formato de email
+            var cedulaPattern = /^\d{7,10}$/; // De 7 a 10 dígitos
+            var passwordPattern = /^\S+$/; // Sin espacios
+
+            errorContainer.textContent = ""; // Limpiamos cualquier mensaje de error previo
+
+            if (!namePattern.test(nameInput.value)) {
+                errorContainer.textContent = "El nombre solo puede contener letras y espacios.";
+                return false;
+            }
+
+            if (!phonePattern.test(phoneInput.value)) {
+                errorContainer.textContent = "El número de teléfono debe tener 10 dígitos.";
+                return false;
+            }
+
+            if (!emailPattern.test(emailInput.value)) {
+                errorContainer.textContent = "Por favor, ingresa un email válido (.co, .com, .hotmail).";
+                return false;
+            }
+
+            if (!cedulaPattern.test(cedulaInput.value)) {
+                errorContainer.textContent = "La cédula debe tener entre 7 y 10 dígitos.";
+                return false;
+            }
+
+            if (!passwordPattern.test(passwordInput.value)) {
+                errorContainer.textContent = "La contraseña no puede contener espacios.";
+                return false;
+            }
+
+            return true;
+        }
+    // INICIAR SESION
+
+    function iniciarSesion() {
+            var lsapInput = document.getElementById('lsap');
+            var lpassInput = document.getElementById('lpass');
+            var errorMessage = document.getElementById('error-message');
+
+            var lsapPattern = /^[0-9]{7,10}$/; // 10 dígitos exactamente
+            var lpassPattern = /^[\S]{8,}$/; // Al menos 8 caracteres y sin espacios
+
+            errorMessage.textContent = ""; // Limpiamos cualquier mensaje de error previo
+
+            if (!lsapPattern.test(lsapInput.value)) {
+                errorMessage.textContent = "Por favor, ingresa un número de identificación válido.";
+                return false; // Evitamos el envío del formulario
+            }
+
+            if (!lpassPattern.test(lpassInput.value)) {
+                errorMessage.textContent = "La contraseña debe tener al menos 8 caracteres.";
+                return false; // Evitamos el envío del formulario
+            }
+
+            return true; // El formulario se enviará si todas las validaciones son exitosas
+        }
+</script>
+
+
+</body>
+</html>

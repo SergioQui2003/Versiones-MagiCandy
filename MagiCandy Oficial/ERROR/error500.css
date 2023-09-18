@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    background-image: url(../IMG/fondoerror.jpg);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content{
+    margin-top: 140px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position:relative;
+}
+h1{
+    position: absolute;
+    font-size: 80px;
+    text-align:center;
+    width: 300px;
+}
+
+h1#five{
+    left: -50px;
+}
+
+h1#zero2{
+    left: 50px;
+    
+}
+h1#point1{
+    font-size: 100px;
+    top: -50px;
+    left: 0px;
+    animation: moveeye1 7s infinite ease-in;
+}
+h1#point2{
+    font-size: 100px;
+    top: -50px;
+    left: 50px;
+    animation: moveeye2 7s infinite ease-in;
+}
+
+h2{
+    position: absolute;
+    font-size: 20px;
+    text-align:center;
+    width: 300px;
+}
+
+h2#err{
+    top: 5px;
+}
+h2#what{
+    top: 160px;
+}
+@keyframes moveeye1{
+    0%{
+    top: -50px;
+    left: 0px;
+}
+    20%{
+    top: -70px;
+    left: 10px;
+}
+    40%{
+    top: -70px;
+    left: 10px;
+}
+    60%{
+    top: -40px;
+    left: -10px;
+}
+    80%{
+    top: -40px;
+    left: 10px;
+}
+    100%{
+    top: -50px;
+    left: 0px;
+}
+}
+
+@keyframes moveeye2{
+    0%{
+    top: -50px;
+    left: 50px;
+}
+    20%{
+    top: -70px;
+    left: 60px;
+}
+    40%{
+    top: -70px;
+    left: 60px;
+}
+    60%{
+    top: -40px;
+    left: 40px;
+}
+    80%{
+    top: -40px;
+    left: 60px;
+}
+    100%{
+    top: -50px;
+    left: 50px;
+}
+}
