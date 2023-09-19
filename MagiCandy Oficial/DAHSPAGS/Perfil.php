@@ -17,35 +17,35 @@ if (!isset($_SESSION['identificacion'])) {
         </head>
 <body>
 
-<div class="sidebar close">
+    <div class="sidebar close">
         <!-- LINK DE TODAS LAS PAGINAS -->
     <ul class="nav-links">
             <!-- INICIO -->
         <li>
-            <a href="../DAHSPAGS/Ingreso.html">
+            <a href="../DAHSPAGS/Ingreso.php">
                 <i class='bx bx-home' ></i>
                 <span class="link_name">Inicio</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="../DAHSPAGS/Ingreso.html">Inicio</a></li>
+                <li><a class="link_name" href="../DAHSPAGS/Ingreso.php">Inicio</a></li>
             </ul>
         </li>
 
         <!-- HOJA DE PERFIL -->
         <li>
-            <a href="../DAHSPAGS/Perfil.html">
+            <a href="../DAHSPAGS/Perfil.php">
                 <i class='bx bx-id-card' ></i>
                 <span class="link_name">Perfil</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="../DAHSPAGS/Perfil.html">Perfil</a></li>
+                <li><a class="link_name" href="../DAHSPAGS/Perfil.php">Perfil</a></li>
             </ul>
                 </li>
         </li>
         <!-- HOJA DE VENTAS -->
             <li>
                 <div class="iocn-link">
-                <a href="../DAHSPAGS/ReporteVentas.html">
+                <a href="../DAHSPAGS/ReporteVentas.php">
                 <i class='bx bx-collection' ></i>
                 <span class="link_name">Ventas</span>
                 </a>
@@ -53,7 +53,7 @@ if (!isset($_SESSION['identificacion'])) {
             </div>
                 <ul class="sub-menu">
                 <li><a class="link_name" href="#">Ventas</a></li>
-                <li><a href="../DAHSPAGS/ReporteVentas.html">- Reporte de ventas</a></li>
+                <li><a href="../DAHSPAGS/ReporteVentas.php">- Reporte de ventas</a></li>
                 </ul>
             </li>
         <li>
@@ -103,65 +103,63 @@ if (!isset($_SESSION['identificacion'])) {
         </li>
 
             <!-- PARA CERRAR SESION -->
-            <li>
-                <div class="profile-details">
-                    <a href="../ROLES/logOut.php"> <!-- Enlace al archivo PHP de cierre de sesión -->
-                        <i class="bx bx-log-out"></i>
-                    </a>
-                    <img src="../IMG/MGCwhite.jpg" width="90PX">
-                </div>
-            </li>
-
+        <li>
+            <div class="profile-details">
+                <a href="../INICIOPAGS/Inicio.html">
+                    <i class="bx bx-log-out"></i>
+                </a>
+                <img src="../IMG/MGCwhite.jpg" width="90PX">
+            </div>
+        </li>
         </ul>
     </div>
+
         <section class="home-section">
 
             <div class="home-content">
-
-                <i class='bx bx-menu' href="Inicio.html" ></i>
-                <H3>Registrar Insumo</H3><br>
-                
+                <i class='bx bx-menu' href="../INICIOPAGS/Inicio.html" ></i>
+                <H3>Perfil</H3><br>
             </div>
 
         </section>
 
-        <section class="form-production" style="margin-top: 8%">
+        <section class="form-production"  style="margin-top: 10%;">
 
-                <label for="produccio-num">Registro de Insumo</label><br><br><hr><br>
+                <label for="produccio-num">Número de identificación:XX-XX-XX</label><br><br><hr><br>
+                <form action="">
 
-                <form action="../CRUD/guardarInsumo.php" method="POST">
+                    <!-- NOMBRE -->
+                    <label for="nombre">Nombres:</label>
+                    <input type="text" style="font-size: large;">
 
-                    <!-- NOMBRE PRODUCTO -->
-                    <label for="nombre_insumo">Nombre del insumo:</label>
-                    <input type="text" id="nombre_insumo" name="nombre_insumo" style="font-size: large;" pattern="^[A-Za-z\s]{1,30}$"  required title="Ingresa solo letras y espacios">
+                    <!-- APELLIDO -->
+                    <label for="apellido" style="margin-left: 27%;">Apellidos:</label>
+                    <input type="text" style="font-size: large;"><br><br>
 
-                    <!-- CATEGORIA -->
-                    <label for="categoria" style="font-size: large; margin-left: 12%">Categoría:</label>
-                    <select id="categoria" name="categoria" style="font-size: large;" required>
-                        <option value="Azúcar" style="font-size: large;">Azúcar</option>
-                        <option value="Ácidos" style="font-size: large;">Ácidos</option>
-                        <option value="Aminoacidos" style="font-size: large;">Aminoácidos</option>
-                        <option value="Colorantes" style="font-size: large;">Colorantes</option>
-                        <option value="Saborizantes" style="font-size: large;">Saborizantes</option>
-                    </select><br><br>
+                    <!-- DIRECCION -->
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" style="font-size: large;">
 
-                    <!-- CANTIDAD -->
-                    <label for="cantidad_insumo" style="font-size: large;">Cantidades:</label>
-                    <input type="text" id="cantidad_insumo" name="cantidad_insumo" style="font-size: large;"  pattern="^(?:[1-9]|[1-7][0-9]|80)$"  required title="Ingresa solo números, el máximo es 80">
+                    <!-- TELEFONO -->
+                    <label for="telefono"  style="margin-left: 27%;">Teléfono:</label>
+                    <input type="text" name="Cantidad" id="Cantidad" style="font-size: large;" required ><br><br>
 
-                    <!-- UNIDAD -->
-                    <label for="unidad" style="margin-left: 20%">Unidad:</label>
-                    <input type="text" id="unidad" name="unidad" style="font-size: large;" pattern="^[A-Za-z\s]{1,20}$"  required title="Ingresa solo letras y espacios"><br><br>
+                    <!-- EMAIL -->
+                    <label for="lote">Email:</label>
+                    <input type="email"  style="font-size: large;" required>
 
-                    <!-- BOTONES -->
-                    <button type="submit" class="btn-crearPro" name="registrarInsumo">Registrar insumo ✔</button>
-                    <a href="Ingreso.html"><button type="button" class="btn-cancelarPro">Cancelar registro ✖</button></a>
+                    <!-- CONTRASEÑA -->
+                    <label for="contraseña" style="margin-left: 30.5%;">Contraseña:</label>
+                    <input type="text"  style="font-size: large;"required><br><br>
 
+                    <!-- BOTON PARA CREAR PRODUCCION -->
+                    <button class="btn-crearPro">Editar Perfil ✔ </button>
+                    <button class="btn-cancelarPro">Cancelar Perfil ✖ </button>
                 </form>
 
         </section>
 
-    <script src="../DAHSPAGS/nav.js"></script>
+<script src="../DAHSPAGS/nav.js"></script>
 
 </body>
 </html>

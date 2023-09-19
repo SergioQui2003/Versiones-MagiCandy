@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['identificacion'])) {
-    //si no existe identificacion
-    header('Location: ../DAHSPAGS/AcessoDenegado.php');
-}else { ?>
-
 <!DOCTYPE html>
 <html lang="es">
         <head>
@@ -17,7 +10,7 @@ if (!isset($_SESSION['identificacion'])) {
         </head>
 <body>
 
-<div class="sidebar close">
+    <div class="sidebar close">
         <!-- LINK DE TODAS LAS PAGINAS -->
     <ul class="nav-links">
             <!-- INICIO -->
@@ -103,69 +96,87 @@ if (!isset($_SESSION['identificacion'])) {
         </li>
 
             <!-- PARA CERRAR SESION -->
-            <li>
-                <div class="profile-details">
-                    <a href="../ROLES/logOut.php"> <!-- Enlace al archivo PHP de cierre de sesión -->
-                        <i class="bx bx-log-out"></i>
-                    </a>
-                    <img src="../IMG/MGCwhite.jpg" width="90PX">
-                </div>
-            </li>
-
+        <li>
+            <div class="profile-details">
+                <a href="../INICIOPAGS/Inicio.html">
+                    <i class="bx bx-log-out"></i>
+                </a>
+                <img src="../IMG/MGCwhite.jpg" width="90PX">
+            </div>
+        </li>
         </ul>
     </div>
+
         <section class="home-section">
 
             <div class="home-content">
 
                 <i class='bx bx-menu' href="Inicio.html" ></i>
-                <H3>Registrar Insumo</H3><br>
+                <H3>Reporte de ventas</H3><br>
                 
             </div>
 
         </section>
 
-        <section class="form-production" style="margin-top: 8%">
+        <section class="form-production">
 
-                <label for="produccio-num">Registro de Insumo</label><br><br><hr><br>
+                <label for="produccio-num">Gráficos de reportes </label><br><br><hr><br>
+                <form action="">
 
-                <form action="../CRUD/guardarInsumo.php" method="POST">
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
 
-                    <!-- NOMBRE PRODUCTO -->
-                    <label for="nombre_insumo">Nombre del insumo:</label>
-                    <input type="text" id="nombre_insumo" name="nombre_insumo" style="font-size: large;" pattern="^[A-Za-z\s]{1,30}$"  required title="Ingresa solo letras y espacios">
-
-                    <!-- CATEGORIA -->
-                    <label for="categoria" style="font-size: large; margin-left: 12%">Categoría:</label>
-                    <select id="categoria" name="categoria" style="font-size: large;" required>
-                        <option value="Azúcar" style="font-size: large;">Azúcar</option>
-                        <option value="Ácidos" style="font-size: large;">Ácidos</option>
-                        <option value="Aminoacidos" style="font-size: large;">Aminoácidos</option>
-                        <option value="Colorantes" style="font-size: large;">Colorantes</option>
-                        <option value="Saborizantes" style="font-size: large;">Saborizantes</option>
-                    </select><br><br>
-
-                    <!-- CANTIDAD -->
-                    <label for="cantidad_insumo" style="font-size: large;">Cantidades:</label>
-                    <input type="text" id="cantidad_insumo" name="cantidad_insumo" style="font-size: large;"  pattern="^(?:[1-9]|[1-7][0-9]|80)$"  required title="Ingresa solo números, el máximo es 80">
-
-                    <!-- UNIDAD -->
-                    <label for="unidad" style="margin-left: 20%">Unidad:</label>
-                    <input type="text" id="unidad" name="unidad" style="font-size: large;" pattern="^[A-Za-z\s]{1,20}$"  required title="Ingresa solo letras y espacios"><br><br>
-
-                    <!-- BOTONES -->
-                    <button type="submit" class="btn-crearPro" name="registrarInsumo">Registrar insumo ✔</button>
-                    <a href="Ingreso.html"><button type="button" class="btn-cancelarPro">Cancelar registro ✖</button></a>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        const ctx = document.getElementById('myChart');
+    
+        // Define el color "lightblue" para todas las barras
+        const colorBarra = 'lightblue';
+    
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['Febrero', 'Marzo', 'Mayo', 'Junio', 'Julio', 'Agosto'],
+            datasets: [{
+            label: 'Ventas',
+            data: [200, 340, 380, 400, 430, 521],
+            borderWidth: 1,
+            // Asigna el color "lightblue" a todas las barras
+            backgroundColor: colorBarra
+            }]
+            },
+            options: {
+            scales: {
+            y: {
+            beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
                 </form>
 
         </section>
 
-    <script src="../DAHSPAGS/nav.js"></script>
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+        // Para que cuando de sobre las flechas salga subcategorias
+    for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e) => {
+    let arrowParent = e.target.parentElement.parentElement; // seleccionar el elemento principal de la flecha EN EL MENU
+    arrowParent.classList.toggle("showMenu"); // alternar la clase "showMenu" en el elemento principal EN EL MENU
+});
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
 
+        // Agregar un evento de clic al botón de la barra lateral
+    sidebarBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("close"); // cambia la clase "close o cerrar" en la barra lateral
+});
+</script>
 </body>
 </html>
-
-<?php
-}
-?>
