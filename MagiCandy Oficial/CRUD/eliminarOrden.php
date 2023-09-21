@@ -19,5 +19,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 header("location: ../DAHSPAGS/consultarOrden.php");
 // Cierra la conexión a la base de datos
+//
 $conn->close();
 ?>
