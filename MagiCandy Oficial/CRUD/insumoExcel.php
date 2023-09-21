@@ -3,6 +3,7 @@ include('db.php'); // Asegúrate de que db.php se incluya correctamente
 
 $consulta = "SELECT * FROM insumo;";
 // Encabezados para indicar que es un archivo Excel
+//
 header("Content-Type: application/vnd.ms-excel; charset=utf-8");
 header("Content-Disposition: attachment; filename=Insumos.xls");
 
