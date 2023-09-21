@@ -23,7 +23,7 @@ if (isset($_POST['guardarOrden'])) {
 }
 
 header ("location: ../DAHSPAGS/consultarOrden.php");
-
+//
 // Cerrar la conexión
 $conn->close();
 
