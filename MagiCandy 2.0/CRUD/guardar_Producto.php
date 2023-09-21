@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cantidad = $_POST['cantidad'];
 
     // Realizar la inserción en la base de datos o almacenamiento
-
+    //
     // Redirigir de nuevo a la página principal
     header('../DAHSPAGS/RegistraProducto.html');
     exit;
